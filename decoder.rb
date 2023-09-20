@@ -14,4 +14,12 @@ def decode_char str
     end
 end
 
-puts decode_char('--..')
+def decode_word(word)
+    new_word = word.split(' ')
+    @deco_word = new_word.map do |c|
+        decode_char(c)
+    end
+    @deco_word.join
+end
+
+puts decode_word("-- -.--")
