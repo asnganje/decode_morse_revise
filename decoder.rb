@@ -22,4 +22,13 @@ def decode_word(word)
     @deco_word.join
 end
 
-puts decode_word("-- -.--")
+
+def decode_string(str1)
+    @sent_split = str1.split("  ")
+    @deco_sent = @sent_split.map do |w|
+        decode_word(w)
+    end
+    @deco_sent.join(" ")
+end
+
+print decode_string("      .-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...")
